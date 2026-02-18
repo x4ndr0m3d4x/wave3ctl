@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> 🚧 Work in progress. Not all features of the Elgato Wave<strong>:3</strong> are currently available, like controlling the stream/monitor mix using the knob or displaying its value.
+> 🚧 Work in progress. Not all features of the Elgato Wave<strong>:3</strong> are currently available, like controlling the stream/monitor mix or displaying its value.
 
 # wave3ctl
 
