@@ -106,7 +106,7 @@ sudo pacman -S linux-headers
 
 A command-line tool for controlling the Elgato Wave:3 microphone on Linux. It talks to the kernel module via `/dev/wave3ctl` to read and set microphone and headphone parameters over USB.
 
-> **Requires the kernel module to be loaded first.** See [README.md](README.md) for setup.
+> **Requires the kernel module to be loaded first.** See [Building and Installing](#building-and-installing) for setup.
 
 ```
 wave3ctl <command> [argument]
