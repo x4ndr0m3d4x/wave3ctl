@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> 🚧 Work in progress. Not all features of the Wave:3 are currently available, like controlling the stream/monitor mix using the knob or displaying its value.
+
 # wave3ctl
 
 A Linux kernel module that acts as a USB Audio Class control proxy for the Elgato Wave:3 microphone. It sends control requests via `usb_control_msg()`, bypassing the `usbdevfs` interface-claim check that blocks userspace access. The `snd-usb-audio` driver stays loaded and audio is unaffected.
