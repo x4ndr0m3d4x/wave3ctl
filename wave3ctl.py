@@ -9,6 +9,8 @@ Usage:
     wave3ctl status              Show current device state
     wave3ctl mute                Toggle microphone mute
     wave3ctl mute on|off         Set microphone mute
+    wave3ctl hpmute              Toggle headphone mute
+    wave3ctl hpmute on|off       Set headphone mute
     wave3ctl volume              Show headphone volume
     wave3ctl volume <0-100>      Set headphone volume
     wave3ctl gain                Show microphone gain
@@ -215,6 +217,13 @@ class Wave3:
         except OSError:
             return False
 
+    def toggle_hp_mute(self) -> bool | None:
+        cur = self.get_hp_mute()
+        if cur is None:
+            return None
+        self.set_hp_mute(not cur)
+        return not cur
+
     # ── HP Volume (Entity 5) ──
 
     def get_volume(self) -> dict | None:
@@ -380,6 +389,24 @@ def main() -> None:
                 print("🔇 Mic muted" if r else "🎤 Mic unmuted")
             else:
                 _die("Cannot read mic mute state")
+
+    elif cmd == "hpmute":
+        if len(sys.argv) > 2:
+            arg = sys.argv[2].lower()
+            if arg in ("on", "true", "1"):
+                w.set_hp_mute(True)
+                print("🔇 Headphone muted")
+            elif arg in ("off", "false", "0"):
+                w.set_hp_mute(False)
+                print("🔊 Headphone unmuted")
+            else:
+                _die(f"Bad argument '{arg}' — use on / off")
+        else:
+            r = w.toggle_hp_mute()
+            if r is not None:
+                print("🔇 Headphone muted" if r else "🔊 Headphone unmuted")
+            else:
+                _die("Cannot read headphone mute state")
 
     elif cmd == "volume":
         if len(sys.argv) > 2:
