@@ -4,7 +4,7 @@
 > [!WARNING]
 > This software comes with no warranty. I am not responsible for borked kernels, dead microphones, your friends' ears getting destroyed, or thermonuclear war. Use at your own risk.
 
-> [!INFO]
+> [!TIP]
 > For virtual cables and plugins, see [my dots](https://github.com/x4ndr0m3d4x/dots/tree/main/pipewire) (requires PipeWire 0.5+)
 
 # wave3ctl
