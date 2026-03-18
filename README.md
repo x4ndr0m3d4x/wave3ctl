@@ -4,6 +4,9 @@
 > [!WARNING]
 > This software comes with no warranty. I am not responsible for borked kernels, dead microphones, your friends' ears getting destroyed, or thermonuclear war. Use at your own risk.
 
+> [!INFO]
+> For virtual cables and plugins, see [my dots](https://github.com/x4ndr0m3d4x/dots/tree/main/pipewire) (requires PipeWire 0.5+)
+
 # wave3ctl
 
 A Linux kernel module that acts as a USB Audio Class control proxy for the Elgato Wave:3 microphone. It sends control requests via `usb_control_msg()`, bypassing the `usbdevfs` interface-claim check that blocks userspace access. The `snd-usb-audio` driver stays loaded and audio is unaffected.
